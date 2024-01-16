@@ -14,3 +14,29 @@ struct alumno
 
 void getalumno(struct alumno *alumno);
 void putalumno(const struct alumno *alumno);
+
+int main()
+{
+    int n;
+
+    printf("Ingrese el numero de alumnos: ");
+    scanf("%d", &n);
+    fflush(stdin);
+
+    struct alumno alumnos[n];
+    for (int i = 0; i < n; i++)
+    {
+        printf("\nIngresar datos para el alumno %d:\n", i + 1);
+        getAlumno(&alumnos[i]);
+    }
+
+    printf("\nDatos de los alumnos:\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("\nDatos del alumno %d:\n", i + 1);
+        putAlumno(&alumnos[i]);
+    }
+
+    return 0;
+}
+
