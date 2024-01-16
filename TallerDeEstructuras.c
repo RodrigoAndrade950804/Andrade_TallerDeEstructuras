@@ -40,3 +40,20 @@ int main()
     return 0;
 }
 
+void getalumno(struct alumno *alumno)
+{
+    printf("Nombre: ");
+    fgets(alumno->nombre, sizeof(alumno->nombre), stdin);
+    printf("Edad: ");
+    scanf("%d", &alumno->edad);
+    printf("Promedio: ");
+    scanf("%f", &alumno->promedio);
+    fflush(stdin);
+}
+
+void putalumno(const struct alumno *alumno)
+{
+    printf("Nombre: %s", alumno->nombre);
+    printf("Edad: %d\n", alumno->edad);
+    printf("Promedio: %.2f\n", alumno->promedio);
+}
